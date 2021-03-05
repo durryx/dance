@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{listings}
+\date{}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+}
+
+% DURRY'S AUTOBOOTSTRAPPING NOOB CONFIGURING EXECUTABLE
+\title{DANCE guide}
+\author{Giovanni Durante}
+
+\begin{document}
+\maketitle
+\section*{What is the purpose of DANCE}
+DANCE is an automatic customization script written for those who don't want to spend their time ricing up their system. The various configurations provided here are minimal so that you can just add any feature you need without coming up with a bloated system. Ease of use is the main focus, everything should be accessible without you getting an headache. Ergonomics won't be sacrificed for the sake of aesthetics, no cool but useless stuff here. This script is tested and currently works for the following GNU/Linux distros: Arch.
+
+\section*{Getting started}
+The installed WM is my riced version of i3-gaps. After you familiarize with with default setup I suggest you you to read the config files and edit things you don't like. If, before installation, you want add some files or packages to install just edit \verb|config.yml| it's very simple to read. Added files must be put in the same directory of \verb|install.sh|
+
+\subsection*{Keybindings}
+You can use the arrow keys instead of h/j/k/l. The Mod key is the window key.
+\newline Window basics \hfill System essentials
+\renewcommand{\labelitemi}{\textbullet}
+\renewcommand\labelitemii{\textbullet}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Mod+Enter spawn termite (terminal)
+    \item Mod+c close window
+    \item Mod+f toggle fullscreen
+    \item Mod+h/j/k/l move between windows
+    \item Mod+Shift+h/j/k/l move windows
+    \item Mod+Shift+Space Toggle or untoggle floating mode
+    \item Mod+(0-9) go to workspace
+    \item Mod+Shift+(0-9) move current window to that workspace
+    \item Mod+0 open exit mode, select if you want to lock, poweroff, reboot, switch user, suspend 
+    \item Mod+r resize window
+    \item Mod+Shift+r restart i3
+    \item Mod+Ctrl+space change keyboard layout
+\end{itemize}
+\hfill Basic programs
+\begin{itemize}
+    \item Mod+d rofi laucher
+    \item Print take a screenshot
+    \item Mod+m open "dj" set
+    \item F12 open drop down terminal, also to open/close the "dj" set
+\end{itemize}
+\end{multicols}
+
+\section*{Stuff to be configured manually}
+Add or remove wallpaper photos in \verb|~/wallpaper|, nitrogen will randomly choose a photo from that directory. If you are using a laptop you might want to spend some time setting up hardware accelleration to improve battery life, refer to your distro documentation \footnote{Arch docs are always very useful! \href{https://wiki.archlinux.org/index.php/Hardware_video_acceleration}{HW accel} also for \href{https://wiki.archlinux.org/index.php/chromium#Hardware_video_acceleration}{chromium} and \href{https://trac.ffmpeg.org/wiki/HWAccelIntro}{FFmpeg}}. In order to use cmus (music player) you need to run it and specify where to search for music with \verb|:add ~/path/to/dir/|.
+
+\begin{figure}[h!]
+    \includegraphics[width=19.3cm]{prew2.png}
+    ranger, htop and a Mandelbrot set
+    \newline
+    \includegraphics[width=19.3cm]{prew3.png}
+    neofetch, vim and VScode
+    \newline
+\end{figure}
+
+\section*{Contact me! plz}
+\href{mailto:giovanni3durante@gmail.com}{giovanni3durante@gmail.com} | Email me!
+\newline
+\href{https://github.com/durryx}{My Github} | Nothing special here
+\newline
+\href{https://www.paypal.com/paypalme/durrysas}{Paypal} | Yo
+
+\section*{Images}
+
+\end{document}

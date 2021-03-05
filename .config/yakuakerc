@@ -1,0 +1,41 @@
+[Appearance]
+Skin=breeze-thin-dark
+TerminalHighlightOnManualActivation=true
+
+[Desktop Entry]
+DefaultProfile=profile-1.profile
+
+[Dialogs]
+FirstRun=false
+
+[DownloadDialog Settings]
+eDP1 Height 1080=429
+eDP1 Width 1920=700
+
+[Shortcuts]
+close-active-terminal=none
+close-session=none
+decrease-window-height=none
+decrease-window-width=none
+file_quit=none
+grow-terminal-bottom=none
+grow-terminal-left=none
+grow-terminal-right=none
+grow-terminal-top=none
+help_whats_this=none
+increase-window-height=none
+increase-window-width=none
+move-session-left=none
+move-session-right=none
+next-terminal=none
+options_configure=none
+previous-terminal=none
+rename-session=none
+split-left-right=none
+split-top-bottom=none
+toggle-session-monitor-activity=none
+toggle-session-monitor-silence=none
+view-full-screen=none
+
+[Window]
+ShowSystrayIcon=false
