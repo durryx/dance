@@ -7,7 +7,7 @@ DANCE is collection of scripts that automatically installs a minimal riced versi
 ## Installation
 If git is not installed install it with `sudo pacman -S git` then:
 ```
-git clone ..
+git clone https://github.com/durryx/dance
 cd dance
 sudo sh install.sh
 ```

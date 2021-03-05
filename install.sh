@@ -143,9 +143,7 @@ choose(){
 	if [[ $? == 0 ]]; then
 		local choice="installpkg fishshell iconflameshot setdotfiles taptoclick docs nopowerkey"	
 	else
-		local choice=$(whiptail --title "Choose what to install:" --checklist "Options" 10 60 5 "installpkg" "install al packages" on "setdotfiles" "customization" on \
-			"fishshell" "use fish shell as default" off "nopowerkey" "disable powerkey" off "taptoclick" "enable tap to click" off \ 
-			"iconflameshot" "no tray icon for flameshot" on "docs" "generate PDF document" on 3>&1 1>&2 2>&3)
+		local choice=$(whiptail --title "Choose what to install:" --checklist "Options" 10 60 5 "installpkg" "install al packages" on "setdotfiles" "customization" on 	"fishshell" "use fish shell as default" off "nopowerkey" "disable powerkey" off "taptoclick" "enable tap to click" off "iconflameshot" "no tray icon for flameshot" on "docs" "generate PDF document" on 3>&1 1>&2 2>&3)
 	fi
 	[[ .*"$choice".* =~ "installpkg" ]] && installpkg
 	[[ .*"$choice".* =~ "fishshell" ]] && fishshell

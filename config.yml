@@ -133,6 +133,7 @@ yay:
   - xkb-switch-i3
   - cava
   - adobe-base-14-fonts
+  - remarkable-git
 pip:
   - ueberzug
 files:
