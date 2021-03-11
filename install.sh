@@ -16,8 +16,8 @@ checkinternet(){
 	fi
 	}
 checkroot(){
-	# check if user ID is 0 (root{
-	if [[ $(id -u) != 0 ]];then
+	# check if user ID is 0 (root)
+	if [[ $(id -u) != 0 ]]; then
 		whiptail --title "Run as root" --ok-button "next"\
 		--msgbox "Please run the script as root, the current user is $(whoami)" 20 40 3>&1 1>&2 2>&3
 		exit 1
@@ -77,11 +77,13 @@ installpkg(){
 	local YAY=$(yq '.yay' config.yml | tr -d '[],"')
 	local PIP=$(yq '.pip' config.yml | tr -d '[],"')
 	pacman -Sy --noconfirm --needed $PACMAN
-	# install yay AUR helper
-	mkdir /opt/yay-git/
-	git clone "https://aur.archlinux.org/yay-git.git" /opt/yay-git/
-	chown -R $user:$user /opt/yay-git
-	cd /opt/yay-git/; sudo -u $user "makepkg" -si --noconfirm; cd -
+	if ! command -v yay; then
+		# install yay AUR helper
+		mkdir /opt/yay-git/
+		git clone "https://aur.archlinux.org/yay-git.git" /opt/yay-git/
+		chown -R $user:$user /opt/yay-git
+		cd /opt/yay-git/; sudo -u $user "makepkg" -si --noconfirm; cd -
+	fi
 	sudo -u $user "yay" -S --noconfirm $YAY
 	pip install $PIP
 	}
@@ -92,7 +94,7 @@ setdotfiles(){
 	for (( c=1; c<$(yq '.files | .[]' config.yml | wc -l); c=$((c+2)) )); do
 		COPY=$(yq '.files | .[]' config.yml | sed -n "$c{p;q}" | sed "s|\"||g;s|~|$home|g")
 		PASTE=$(yq '.files | .[]' config.yml | sed -n "$((c+1)){p;q}" | sed "s|\"||g;s|~|$home|g")
-		cp -rf "$COPY" "$PASTE"
+		cp -rfbv "$COPY" "$PASTE"
 	done	
 	chmod -R +xX "$home/.config/i3/scripts"*
 	export PATH=$PATH:$home/scripts
@@ -136,7 +138,7 @@ docs(){
 	rm -f ../dance-doc.aux ../dance-doc.log ../dance-doc.out
 	} 
 choose(){
-	# enable all threads, caching with ccache for makepkg
+	# enable all threads and caching with ccache for makepkg
 	sed -i "s-/-j2/j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/;s|!ccache|ccache|" /etc/makepkg.conf
         cp addons.sh $home	
 	whiptail --yesno "Install everything? (recommended)" 10 100 3>&1 1>&2 2>&3

@@ -27,23 +27,18 @@ pacman:
   - picom
   - ccache
   - dos2unix
-  - onboard
   - nitrogen
   - networkmanager
   - network-manager-applet
   - ncdu
-  - gnuplot
   - python-pip
   - i3blocks
-  - htop
   - git
   - flameshot
   - thunar-archive-plugin
   - dmenu
   - chromium
   - adwaita-icon-theme
-  - bash-completion
-  - blueman
   - bc
   - alacritty
   - figlet
@@ -106,12 +101,13 @@ pacman:
   - adobe-source-han-serif-otc-fonts
   - adobe-source-han-serif-tw-fonts
   - gsettings-qt
+  - s-tui
+  - bpytop
 yay:
   - matcha-gtk-theme
   - luv-icon-theme-git
   - papirus-icon-theme
   - ttf-iosevka
-  - libinput-xrandr-autorotate
   - nerd-fonts-fantasque-sans-mono
   - lightdm-slick-greeter
   - i3lock-fancy-rapid-git
@@ -119,7 +115,6 @@ yay:
   - otf-font-awesome
   - awesome-terminal-fonts
   - libva-vdpau-driver-chromium
-  - redshift-gtk-git
   - nerd-fonts-hack
   - libva-vdpau-driver-chromium
   - light-git
@@ -133,7 +128,6 @@ yay:
   - xkb-switch-i3
   - cava
   - adobe-base-14-fonts
-  - remarkable-git
 pip:
   - ueberzug
 files:

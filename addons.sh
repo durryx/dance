@@ -53,10 +53,7 @@ ohmyfish(){
 	sudo -u "$user" termite -e "fish install --path=~/.local/share/omf --config=~/.config/omf"
 	rm install
 	sudo -u $user fish -c "omf install aight"
-	#sudo -u "$user" fish -c "omf install fishbone"
-	#sed 's@pwd@pwd | sed "s|^HOME|~|"@g' /home/$user/.config/fish/functions/fish_prompt.fish
-	#mv /home/$user/.local/share/omf/themes/fishbone/fish_greeting.fish /home/$user/.local/share/omf/themes/fishbone/fish_greeting.fish.bkp
-}
+	}
 
 if [[ $UID -ne 0 ]]; then
 	sudo -p 'Restarting as root, enter password: ' sh $0 "$@"
